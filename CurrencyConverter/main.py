@@ -31,16 +31,21 @@ def Pound():
     amount = float(input("How much money are you converting?"))
     cTo = input("To which currency would you like to convert?")
     if cTo == "pound":
-        print(amount)
+        amount = newVal
+        newerVal = round(newVal, 2)
+        print(newerVal)
     elif cTo == "dollar":
         newVal = amount / dollar
-        print(newVal)
+        newerVal = round(newVal, 2)
+        print(newerVal)
     elif cTo == "euro":
         newVal = amount / euro
-        print(newVal)
+        newerVal = round(newVal, 2)
+        print(newerVal)
     elif cTo == "yen":
         newVal = amount / yen
-        print(newVal)
+        newerVal = round(newVal, 2)
+        print(newerVal)
     else:
         print("We do not support that.")
 
@@ -50,17 +55,21 @@ def Dollar():
     cTo = input("To which currency would you like to convert?")
     if cTo == "pound":
         newVal = amount * pound
-        print(newVal)
+        newerVal = round(newVal, 2)
+        print(newerVal)
     elif cTo == "dollar":
-        print(amount)
+        newerVal = round(amount, 2)
+        print(newerVal)
     elif cTo == "euro":
         val = amount * dollar
         newVal = val / euro
-        print(newVal)
+        newerVal = round(newVal, 2)
+        print(newerVal)
     elif cTo == "yen":
         val = amount * dollar
         newVal = val / yen
-        print(newVal)
+        newerVal = round(newVal, 2)
+        print(newerVal)
     else:
         print("We do not support that.")
 
@@ -70,17 +79,21 @@ def Euro():
     cTo = input("To which currency would you like to convert?")
     if cTo == "pound":
         newVal = amount / pound
-        print(newVal)
+        newerVal = round(newVal, 2)
+        print(newerVal)
     elif cTo == "dollar":
         val = amount * euro
         newVal = val / dollar
-        print(newVal)
+        newerVal = round(newVal, 2)
+        print(newerVal)
     elif cTo == "euro":
-        print(amount)
+        newerVal = round(amount, 2)
+        print(newerVal)
     elif cTo == "yen":
         val = amount * euro
         newVal = val / yen
-        print(newVal)
+        newerVal = round(newVal, 2)
+        print(newerVal)
     else:
         print("We do not support that.")
 
@@ -90,17 +103,21 @@ def Yen():
     cTo = input("To which currency would you like to convert?")
     if cTo == "pound":
         newVal = amount / yen
-        print(newVal)
+        newerVal = round(newVal, 2)
+        print(newerVal)
     elif cTo == "dollar":
         val = amount * yen
         newVal = val / dollar
-        print(newVal)
+        newerVal = round(newVal, 2)
+        print(newerVal)
     elif cTo == "euro":
         val = amount * yen
         newVal = val / euro
-        print(newVal)
+        newerVal = round(newVal, 2)
+        print(newerVal)
     elif cTo == "yen":
-        print(amount)
+        newerVal = round(amount, 2)
+        print(newerVal)
     else:
         print("We do not support that.")
 
