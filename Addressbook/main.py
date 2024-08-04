@@ -34,22 +34,48 @@ def addAddress():
 
 
 def searchMenu():
+    records = []
+    with open("addressbook.csv", "r") as file:
+        for line in file:
+            line = line.strip()
+            record = line.split(",")
+            records.append(record)
+    # print(records)
+    # load contents of address file into a indexed array
+    # index looks like
+    # record['sharar']['sep'] = [firstname, lastname, add1, add2, postcode, dob. email]
+    # while end if file
+    # add content to records array
     print("1.Search by surname")
     print("2.Search by date of birth")
     print("3.Quit")
     choice = input("Please enter your choice:")
     if choice == "1":
         print("Option 1 selected.")
-        sur()
+        sur(records)
     elif choice == "2":
         print("Option 2 selected.")
-        date()
+        ""
     elif choice == "3":
         print("Option 3 selected.")
         menu()
     else:
         print("Sorry, we do not support that.")
-        op2()
+        searchMenu()
+
+def sur(records):
+    print(records)
+    inputSur = input("Please enter the surname you would like to search by.")
+    found = []
+    for i in range(len(records)):
+        print("Record")
+        print(records[i])
+
+        answer = records[i].index(inputSur)
+        found.append(records[i])
+
+    print(found)
+
 
 
 menu()
