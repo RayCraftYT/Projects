@@ -68,11 +68,8 @@ def sur(records):
     inputSur = input("Please enter the surname you would like to search by.")
     found = []
     for i in range(len(records)):
-        print("Record")
-        print(records[i])
-
-        answer = records[i].index(inputSur)
-        found.append(records[i])
+        if inputSur in records[i]:
+            found.append(records[i])
 
     print(found)
 
