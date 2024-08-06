@@ -11,7 +11,6 @@ def menu():
     elif choice == "2":
         print("Option 2 selected.")
         searchMenu()
-    elif choice == "3":
         print("Option 3 selected. Thank you for using our service.")
     else:
         print("Sorry, we do not support that.")
@@ -25,9 +24,11 @@ def addAddress():
     addressL2 = input("Second line of address:")
     postcode = input("Postcode:")
     telephone = input("Telephone number:")
-    dob = input("Date of birth:")
+    date = input("Date of birth (day)")
+    month = input("Date of birth (month)")
+    year = input("Date of birth (year)")
     email = input("Email:")
-    record = surname + "," + firstname + "," + addressL1 + "," + addressL2 + "," + postcode + "," + telephone + "," + dob + "," + email + "\n"
+    record = surname + "," + firstname + "," + addressL1 + "," + addressL2 + "," + postcode + "," + telephone + "," + date + "," + month + "," + year + "," + email + "\n"
     with open("addressbook.csv", "a") as file:
         file.write(record)
         file.close()
@@ -52,27 +53,24 @@ def searchMenu():
     choice = input("Please enter your choice:")
     if choice == "1":
         print("Option 1 selected.")
-        sur(records)
+        search(records, "surname")
     elif choice == "2":
         print("Option 2 selected.")
-        ""
+        search(records, "Month of birth")
     elif choice == "3":
         print("Option 3 selected.")
         menu()
     else:
         print("Sorry, we do not support that.")
         searchMenu()
-
-def sur(records):
+def search(records, field):
     print(records)
-    inputSur = input("Please enter the surname you would like to search by.")
+    inputSearchTerm = input("Please enter the " + field + " you would like to search by.")
     found = []
     for i in range(len(records)):
-        if inputSur in records[i]:
+        if inputSearchTerm in records[i]:
             found.append(records[i])
 
     print(found)
-
-
 
 menu()
